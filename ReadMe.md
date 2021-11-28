@@ -21,11 +21,11 @@ docker-compose -f .\script\docker-compose.yml up -d
 ```
 
 ### Create scrip of User table 
-create table "user"
-(
-id       bigint not null
-constraint user_pkey
-primary key,
-name     varchar(255),
-password varchar(255)
+create table "user"  
+(  
+id       bigint not null  
+constraint user_pkey  
+primary key,  
+name     varchar(255),  
+password varchar(255)  
 );
