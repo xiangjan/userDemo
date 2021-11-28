@@ -1,7 +1,7 @@
 ## 회원 가입, 비밀번호 변경, 회원 삭제 구현
 ### 사용된 라이브러리 및 구현에 대하여
-jpa, querydsl : 참고 링크 https://techfox.tistory.com/14
-회원 삭제에 대하여 Transaction 사용: https://techfox.tistory.com/20
+jpa, querydsl : 참고 링크 https://techfox.tistory.com/14  
+회원 삭제에 대하여 Transaction 사용: https://techfox.tistory.com/20  
 Unit test는 Spring test framework 사용  
 DB는 Postgresql을 사용 했습니다.(생성 스크립트는 하단에 첨부하였습니다.)
 ### 환경 구성
