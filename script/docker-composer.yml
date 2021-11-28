@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+  postgres:
+    image: postgres:10
+    container_name: postgres_spring
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=testDB
+    restart: always
+    ports:
+      - '15432:5432'
+    volumes:
+      - ~/volume/postgre:/var/lib/postgresql/data
+    networks:
+      - test_net
+
+  spring-boot:
+    image: user
+    container_name: spring-users
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_spring:5432/testDB
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    restart: always
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+    networks:
+      - test_net
+networks:
+  test_net:
+    driver: bridge
